@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "11538269913",
+    "project_id": "bcalm-71892",
+    "storage_bucket": "bcalm-71892.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:11538269913:android:2f771b7caa81e1516ba0c8",
+        "android_client_info": {
+          "package_name": "com.example.bcalm"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDyreJaRZ2GnipNqy50hgspxMgNLsD-Ntw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
