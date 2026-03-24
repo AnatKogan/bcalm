@@ -77,52 +77,18 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="National ID Number:"
+            android:text="Date of Birth:"
             android:textColor="#555555"
             android:textStyle="bold"
             android:layout_marginBottom="4dp"/>
         <EditText
-            android:id="@+id/editTextTextID"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginBottom="16dp"
-            android:background="@android:drawable/editbox_background"
-            android:hint="9 digits"
-            android:inputType="number"
-            android:paddingLeft="15dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Phone Number:"
-            android:textColor="#555555"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp"/>
-        <EditText
-            android:id="@+id/editTextPhone"
-            android:layout_width="match_parent"
-            android:layout_height="55dp"
-            android:layout_marginBottom="16dp"
-            android:background="@android:drawable/editbox_background"
-            android:hint="05X-XXXXXXX"
-            android:inputType="phone"
-            android:paddingLeft="15dp" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Age:"
-            android:textColor="#555555"
-            android:textStyle="bold"
-            android:layout_marginBottom="4dp"/>
-        <EditText
-            android:id="@+id/editTextAge"
+            android:id="@+id/editTextDateOfBirth"
             android:layout_width="match_parent"
             android:layout_height="55dp"
             android:layout_marginBottom="32dp"
             android:background="@android:drawable/editbox_background"
-            android:hint="Minimum age: 18"
-            android:inputType="number"
+            android:hint="YYYY-MM-DD"
+            android:inputType="date"
             android:paddingLeft="15dp" />
 
         <Button

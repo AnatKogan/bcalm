@@ -37,49 +37,43 @@ public class Register_Fragment extends Fragment {
         EditText etEmail = view.findViewById(R.id.editTextTextEmailAddress2);
         EditText etPassword = view.findViewById(R.id.editTextTextPassword2);
         EditText etFullName = view.findViewById(R.id.editTextFullName);
-        EditText etPhone = view.findViewById(R.id.editTextPhone);
-        EditText etId = view.findViewById(R.id.editTextTextID);
-        EditText etAge = view.findViewById(R.id.editTextAge);
+        EditText etDateOfBirth = view.findViewById(R.id.editTextDateOfBirth);
         Button btnRegister = view.findViewById(R.id.button_registerr);
 
         btnRegister.setOnClickListener(v -> {
             String email = etEmail.getText().toString().trim();
             String password = etPassword.getText().toString().trim();
             String name = etFullName.getText().toString().trim();
-            String phone = etPhone.getText().toString().trim();
-            String id = etId.getText().toString().trim();
-            String age = etAge.getText().toString().trim();
+            String dateOfBirth = etDateOfBirth.getText().toString().trim();
 
-            if (email.isEmpty() || password.isEmpty() || name.isEmpty()) {
+            if (email.isEmpty() || password.isEmpty() || name.isEmpty() || dateOfBirth.isEmpty()) {
                 Toast.makeText(getContext(), "Please fill in all required fields", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            registerUser(email, password, name, phone, id, age, v);
+            registerUser(email, password, name, dateOfBirth, v);
         });
 
         return view;
     }
 
-    private void registerUser(String email, String password, String name, String phone, String idNumber, String ageStr, View v) {
+    private void registerUser(String email, String password, String name, String dateOfBirth, View v) {
         mAuth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
                         String userId = mAuth.getCurrentUser().getUid();
-                        writeUserToDb(userId, email, phone, name, idNumber, ageStr, v);
+                        writeUserToDb(userId, email, name, dateOfBirth, v);
                     } else {
                         Toast.makeText(getContext(), "Registration failed: " + task.getException().getMessage(), Toast.LENGTH_LONG).show();
                     }
                 });
     }
 
-    private void writeUserToDb(String userId, String email, String phone, String name, String idNumber, String ageStr, View v) {
+    private void writeUserToDb(String userId, String email, String name, String dateOfBirth, View v) {
         Map<String, Object> user = new HashMap<>();
         user.put("fullName", name);
         user.put("email", email);
-        user.put("phone", phone);
-        user.put("id", idNumber);
-        user.put("age", ageStr);
+        user.put("dateOfBirth", dateOfBirth);
 
         mDatabase.child("users").child(userId).setValue(user)
                 .addOnCompleteListener(task -> {
