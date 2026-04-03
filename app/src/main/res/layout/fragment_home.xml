@@ -1,0 +1,31 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="#FFFFFF">
+
+    <TextView
+        android:id="@+id/homeTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="My Measurement Chart"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="#333333"
+        android:gravity="center"
+        android:layout_marginBottom="24dp" />
+    <Button
+        android:id="@+id/btnUpdateBaby"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Update My Baby"
+        android:backgroundTint="#FF4081"
+        android:textColor="#FFFFFF"
+        android:layout_margin="16dp" />
+    <CalendarView
+        android:id="@+id/calendarView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+</LinearLayout>

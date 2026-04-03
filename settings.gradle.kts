@@ -16,9 +16,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         mavenCentral()
+        // הוסף את השורה הזו כאן:
+        maven { url = uri("https://jitpack.io") }
     }
 }
 
 rootProject.name = "bcalm"
 include(":app")
- 
